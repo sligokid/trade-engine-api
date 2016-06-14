@@ -1,8 +1,17 @@
 package com.magoo.currencyfair.api.model;
 
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class Trade {
+
+	private static final AtomicLong counter = new AtomicLong();
+
+	// FIXME TimeZone conversion
+	private SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yy HH:mm:ss");
 
 	private long id;
 
@@ -18,18 +27,14 @@ public class Trade {
 
 	private BigDecimal rate;
 
-	// FIXME date
-	private String timePlaced;
+	private Date timePlaced;
 
 	private String originatingCountry;
 
-	private Double lng;
-
-	private Double lat;
-
-	// {"userId": "134256", "currencyFrom": "EUR", "currencyTo": "GBP",
-	// "amountSell": 1000, "amountBuy": 747.10, "rate": 0.7471, "timePlaced" :
-	// "24-JAN-15 10:27:44", "originatingCountry" : "FR"}
+	public Trade() {
+		super();
+		this.setId(counter.incrementAndGet());
+	}
 
 	public long getId() {
 		return id;
@@ -87,12 +92,13 @@ public class Trade {
 		this.rate = rate;
 	}
 
-	public String getTimePlaced() {
+	public Date getTimePlaced() {
 		return timePlaced;
 	}
 
-	public void setTimePlaced(String timePlaced) {
-		this.timePlaced = timePlaced;
+	// FIXME UT
+	public void setTimePlaced(String timePlaced) throws ParseException {
+		this.timePlaced = formatter.parse(timePlaced);
 	}
 
 	public String getOriginatingCountry() {
@@ -104,43 +110,5 @@ public class Trade {
 	}
 
 	// FIXME use Java 7 Objects method
-
-	public Double getLng() {
-		return lng;
-	}
-
-	public void setLng(Double lng) {
-		this.lng = lng;
-	}
-
-	public Double getLat() {
-		return lat;
-	}
-
-	public void setLat(Double lat) {
-		this.lat = lat;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Trade other = (Trade) obj;
-		if (id != other.id)
-			return false;
-		return true;
-	}
 
 }
