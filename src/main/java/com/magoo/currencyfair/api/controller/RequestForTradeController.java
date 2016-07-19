@@ -1,5 +1,7 @@
 package com.magoo.currencyfair.api.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,6 +13,8 @@ import com.magoo.currencyfair.api.service.RawTradeService;
 @RestController
 public class RequestForTradeController {
 
+	private static final Logger LOG = LoggerFactory.getLogger(RequestForTradeController.class);
+
 	static final String API_RFT_URL = "/api/rft";
 
 	@Autowired
@@ -18,7 +22,11 @@ public class RequestForTradeController {
 
 	@RequestMapping(value = API_RFT_URL, method = RequestMethod.GET)
 	public RawTrade trade() {
-		return tradeService.pop();
+		RawTrade trade = tradeService.pop();
+		if (trade != null) {
+			LOG.info("Popping:" + trade.toString());
+		}
+		return trade;
 	}
 
 }

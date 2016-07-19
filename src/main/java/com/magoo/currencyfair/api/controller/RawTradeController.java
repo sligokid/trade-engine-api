@@ -16,16 +16,16 @@ import com.magoo.currencyfair.api.service.RawTradeService;
 @RestController
 public class RawTradeController {
 
-	static final String TRADE_URL = "/api/trade";
-
 	private static final Logger LOG = LoggerFactory.getLogger(RawTrade.class);
+
+	static final String TRADE_URL = "/api/trade";
 
 	@Autowired
 	private RawTradeService tradeService;
 
 	@RequestMapping(value = TRADE_URL, method = RequestMethod.POST)
 	public RawTrade trade(@RequestBody final RawTrade trade, HttpServletResponse response) {
-		LOG.info(trade.toString());
+		LOG.info("Parsing:" + trade.toString());
 		tradeService.push(trade);
 		response.setStatus(HttpServletResponse.SC_NO_CONTENT);
 		return trade;

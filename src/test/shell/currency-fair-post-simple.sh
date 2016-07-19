@@ -11,7 +11,7 @@ do
 			"rate": 0.7471, 
 			"timePlaced" : "14-JAN-15 10:27:44", 
 			"originatingCountry" : "FR"
-		}' -H 'Content-Type: application/json' 'http://localhost:8282/trade'
+		}' -H 'Content-Type: application/json' 'http://localhost:8102/api/trade'
 echo ""
 sleep 1
 done  
