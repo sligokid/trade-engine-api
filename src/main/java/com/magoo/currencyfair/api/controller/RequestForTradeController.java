@@ -11,11 +11,14 @@ import com.magoo.currencyfair.api.service.RawTradeService;
 @RestController
 public class RequestForTradeController {
 
+	static final String API_RFT_URL = "/api/rft";
+
 	@Autowired
 	private RawTradeService tradeService;
 
-	@RequestMapping(value = "/rft", method = RequestMethod.GET)
+	@RequestMapping(value = API_RFT_URL, method = RequestMethod.GET)
 	public RawTrade trade() {
 		return tradeService.pop();
 	}
+
 }

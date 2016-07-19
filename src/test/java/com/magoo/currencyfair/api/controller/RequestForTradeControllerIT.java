@@ -36,7 +36,7 @@ public class RequestForTradeControllerIT {
 
 	@Test
 	public void rft_url_responds_with_200() throws Exception {
-		URL url = new URL("http://localhost:" + port + "/rft");
+		URL url = new URL("http://localhost:" + port + RequestForTradeController.API_RFT_URL);
 
 		ResponseEntity<String> response = template.getForEntity(url.toString(), String.class);
 

@@ -37,13 +37,13 @@ public class RawTradeControllerIT {
 	}
 
 	@Test
-	public void trade_endpoint_responds_with_200() throws Exception {
-		URL url = new URL("http://localhost:" + port + "/trade");
+	public void trade_endpoint_responds_with_204_no_content() throws Exception {
+		URL url = new URL("http://localhost:" + port + RawTradeController.TRADE_URL);
 
 		ResponseEntity<RawTrade> response = template.postForEntity(url.toString(), new RawTrade(), RawTrade.class,
 				new HashMap<>());
 
-		assertEquals("200", response.getStatusCode().toString());
+		assertEquals("204", response.getStatusCode().toString());
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.magoo.currencyfair.api.controller;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,16 +16,18 @@ import com.magoo.currencyfair.api.service.RawTradeService;
 @RestController
 public class RawTradeController {
 
+	static final String TRADE_URL = "/api/trade";
+
 	private static final Logger LOG = LoggerFactory.getLogger(RawTrade.class);
 
 	@Autowired
 	private RawTradeService tradeService;
 
-	@RequestMapping(value = "/trade", method = RequestMethod.POST)
-	// @RequestBody @Valid final User user
-	public RawTrade trade(@RequestBody final RawTrade trade) {
+	@RequestMapping(value = TRADE_URL, method = RequestMethod.POST)
+	public RawTrade trade(@RequestBody final RawTrade trade, HttpServletResponse response) {
 		LOG.info(trade.toString());
 		tradeService.push(trade);
+		response.setStatus(HttpServletResponse.SC_NO_CONTENT);
 		return trade;
 	}
 }

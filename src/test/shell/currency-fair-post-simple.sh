@@ -13,5 +13,5 @@ do
 			"originatingCountry" : "FR"
 		}' -H 'Content-Type: application/json' 'http://localhost:8282/trade'
 echo ""
-
+sleep 1
 done  
