@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.magoo.currencyfair.api.model.RawTrade;
 import com.magoo.currencyfair.api.service.RawTradeService;
 
+/**
+ * The Class RequestForTradeController REST API implementation.
+ */
 @RestController
 public class RequestForTradeController {
 
@@ -24,7 +27,7 @@ public class RequestForTradeController {
 	public RawTrade trade() {
 		RawTrade trade = tradeService.pop();
 		if (trade != null) {
-			LOG.info("Popping:" + trade.toString());
+			LOG.info("GET:" + trade.toString());
 		}
 		return trade;
 	}

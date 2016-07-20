@@ -1,28 +1,36 @@
 package com.magoo.currencyfair.api.model;
 
+import javax.validation.constraints.NotNull;
+
+/**
+ * The Class RawTrade map a JSON POST trade request to an entity.
+ * 
+ * Minimal Validation(Spring Bean Validation API) is performed.
+ */
 public class RawTrade {
 
-	// FIXME TimeZone conversion
-	// private static final AtomicLong counter = new AtomicLong();
-	// this.setId(counter.incrementAndGet());
-	// private SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yy
-	// HH:mm:ss");
-	// this.timePlaced = formatter.parse(timePlaced);
-
+	@NotNull
 	private String userId;
 
+	@NotNull
 	private String currencyFrom;
 
+	@NotNull
 	private String currencyTo;
 
+	@NotNull
 	private String amountSell;
 
+	@NotNull
 	private String amountBuy;
 
+	@NotNull
 	private String rate;
 
+	@NotNull
 	private String timePlaced;
 
+	@NotNull
 	private String originatingCountry;
 
 	public RawTrade() {

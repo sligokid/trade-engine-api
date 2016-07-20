@@ -37,13 +37,39 @@ public class RawTradeControllerIT {
 	}
 
 	@Test
-	public void trade_endpoint_responds_with_204_no_content() throws Exception {
-		URL url = new URL("http://localhost:" + port + RawTradeController.TRADE_URL);
+	public void trade_endpoint_validation_fails_with_400() throws Exception {
+		URL url = new URL("http://localhost:" + port + RawTradeController.API_TRADE_URL);
 
-		ResponseEntity<RawTrade> response = template.postForEntity(url.toString(), new RawTrade(), RawTrade.class,
+		RawTrade rawTrade = new RawTrade();
+
+		ResponseEntity<RawTrade> response = template.postForEntity(url.toString(), rawTrade, RawTrade.class,
+				new HashMap<>());
+
+		assertEquals("400", response.getStatusCode().toString());
+	}
+
+	@Test
+	public void trade_endpoint_responds_with_204() throws Exception {
+		URL url = new URL("http://localhost:" + port + RawTradeController.API_TRADE_URL);
+
+		RawTrade rawTrade = buildValidatedTrade();
+		ResponseEntity<RawTrade> response = template.postForEntity(url.toString(), rawTrade, RawTrade.class,
 				new HashMap<>());
 
 		assertEquals("204", response.getStatusCode().toString());
+	}
+
+	private RawTrade buildValidatedTrade() {
+		RawTrade rawTrade = new RawTrade();
+		rawTrade.setUserId("123456");
+		rawTrade.setCurrencyFrom("EUR");
+		rawTrade.setCurrencyTo("GBP");
+		rawTrade.setAmountSell("1000");
+		rawTrade.setAmountBuy("747.10");
+		rawTrade.setRate("0.741");
+		rawTrade.setTimePlaced("24-JAN-15 10:27:44");
+		rawTrade.setOriginatingCountry("FR");
+		return rawTrade;
 	}
 
 }
