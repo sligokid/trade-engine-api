@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.magoo.currencyfair.api.model.RawTrade;
 
 /**
- * The Class RawTradeService abstract Queue functionality.
+ * The Class RawTradeService providing trade queue functionality.
  */
 @Service
 public class RawTradeService {
