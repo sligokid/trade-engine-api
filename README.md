@@ -75,7 +75,7 @@ An example trade formatted in JSON ready for POSTING to this API is shown here:
 ```
 ##### GET
 
-A **GET** request returns the JSON representation of the next avaiable quote.
+A **GET** request returns the JSON representation of the next avaiable trade.
 This resource is intended for internal consumption via the https://github.com/sligokid/trade-engine-pub component
 
 ### URI
