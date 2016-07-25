@@ -6,12 +6,11 @@ Spring Boot microservice API exposing trade processing endpoint (2016)
 
 - [Introduction](#introduction)
   - [Overview](#overview)
+  - [Architecture](#architecture)
   - [Verbs](#verbs)
   - [URI](#uri)
   - [Demo](#demo)
   
-![api-diagram 1](https://cloud.githubusercontent.com/assets/6519496/17114491/1221077a-52a7-11e6-9e60-bc8515a12aad.png)
-
 ## Introduction
 
 This Document outlines the web service interface provided to enable the submission of trades to the trade-engine.
@@ -20,11 +19,15 @@ Trades submitted via this API are processed and made available via a RESTFUL end
 No Authentication is requred by the client to access to this service.
 This service is intended to be public and function as the entry point in a microservice architecture
 
-### Overview
+## Overview
 
 This API uses the "Representational state transfer" (REST) architectural style. 
 
-### Verbs
+## Architecture
+
+![api-diagram 1](https://cloud.githubusercontent.com/assets/6519496/17114491/1221077a-52a7-11e6-9e60-bc8515a12aad.png)
+
+## Verbs
 
 *HTTP Methods* or *Verbs* are the actions which can be used on each resource. There are 2 verbs supported by this API:
 
@@ -80,7 +83,7 @@ An example trade formatted in JSON ready for POSTING to this API is shown here:
 A **GET** request returns the JSON representation of the next avaiable trade.
 This resource is intended for internal consumption via the https://github.com/sligokid/trade-engine-pub component
 
-### URI
+## URI
 
 The following table summarises all the available resource URIs, and the effect of each verb on them. Each of them is relative to the base URI for this API: `http://ec2-52-16-13-114.eu-west-1.compute.amazonaws.com:8102`.
 
