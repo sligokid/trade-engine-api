@@ -54,8 +54,8 @@ while [  true ]; do
 	#echo curl -i -H "Accept: application/json" -H "Content-Type:application/json" -X POST --data "$json" "http://localhost:8282/api/trade"
 	curl --silent -i -H "Accept: application/json" -H "Content-Type:application/json" -X POST --data "$json" "http://localhost:8102/api/trade"
 	
-	timeToWait=$((RANDOM % 3))
-        #timeToWait=5
+	#timeToWait=$((RANDOM % 3))
+        timeToWait=10
 	echo Sleeping $timeToWait
 	sleep $timeToWait
 
