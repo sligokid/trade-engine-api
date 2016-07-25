@@ -9,6 +9,8 @@ Spring Boot microservice API exposing trade processing endpoint (2016)
   - [Verbs](#verbs)
   - [URI](#uri)
   - [Demo](#demo)
+  
+![api-diagram 1](https://cloud.githubusercontent.com/assets/6519496/17114491/1221077a-52a7-11e6-9e60-bc8515a12aad.png)
 
 ## Introduction
 
