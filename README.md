@@ -35,6 +35,7 @@ A sample curl based script that can be used to build and send requests to this s
 #### [REST Client](https://resttesttest.com/)
 A REST client ie. Cocoa Rest Client can be used to POST / GET resources to / from this service. 
 
+<img width="1039" alt="preview-api" src="https://cloud.githubusercontent.com/assets/6519496/17109918/faf2c83c-5291-11e6-938b-ba80fcc7bf3a.png">
 
 
 #### <a name="trade-permissible-fields"></a>Permissible Fields
