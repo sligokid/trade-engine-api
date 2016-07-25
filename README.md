@@ -16,6 +16,7 @@ This Document outlines the web service interface provided to enable the submissi
 The trade engine is a fiticious implementation of a currency exchange platform.
 Trades submitted via this API are processed and made available via a RESTFUL endpoint.
 No Authentication is requred by the client to access to this service.
+This service is intended to be public and function as the entry point in a microservice architecture
 
 ### Overview
 
