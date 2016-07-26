@@ -10,6 +10,7 @@ Spring Boot microservice API exposing trade processing endpoint (2016)
   - [Verbs](#verbs)
   - [URI](#uri)
   - [Demo](#demo)
+  - [Install](#install)
   
 ## Introduction
 
@@ -98,3 +99,11 @@ The following table summarises all the available resource URIs, and the effect o
 http://ec2-52-16-13-114.eu-west-1.compute.amazonaws.com:8102/api/trade
 
 http://ec2-52-16-13-114.eu-west-1.compute.amazonaws.com:8102/api/rft
+
+#Install
+
+``` bash
+   $ git clone https://github.com/sligokid/trade-engine-api.git
+   $ mvn clean package
+   $ mvn spring-boot:run
+```
