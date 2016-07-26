@@ -1,4 +1,4 @@
-# trade-engine-api
+# trade-engine-api [![Build Status](https://travis-ci.org/sligokid/trade-engine-api.svg?branch=develop)](https://travis-ci.org/sligokid/trade-engine-api)
 
 Spring Boot microservice API exposing trade processing endpoint (2016)
 
