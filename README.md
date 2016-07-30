@@ -104,6 +104,7 @@ http://ec2-52-16-13-114.eu-west-1.compute.amazonaws.com:8102/api/rft
 
 ``` bash
    $ git clone https://github.com/sligokid/trade-engine-api.git
+   $ cd trade-engine-api
    $ mvn clean package
    $ mvn spring-boot:run
 ```
