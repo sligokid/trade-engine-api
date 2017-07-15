@@ -108,3 +108,24 @@ http://ec2-52-16-13-114.eu-west-1.compute.amazonaws.com:8102/api/rft
    $ mvn clean package
    $ mvn spring-boot:run
 ```
+
+#Demo
+
+To demo there is a script here that executes random trades against the api.
+
+``` bash
+   $ cd trade-engine-api/src/test/shell
+   $ mvn spring-boot:run
+   $ bash currency-fair-post.sh
+```
+
+Logs:
+
+``` bash
+2017-07-15 13:35:25.205  INFO 38041 --- [nio-8102-exec-1] c.magoo.currencyfair.api.model.RawTrade  : POST:RawTrade [userId=68987, currencyFrom=AUD, currencyTo=DKK, amountSell=22270.3987, amountBuy=22224.2973, rate=0.5789, timePlaced=2017-07-15 13:35:25, originatingCountry=FR]
+2017-07-15 13:35:26.238  INFO 38041 --- [nio-8102-exec-3] c.magoo.currencyfair.api.model.RawTrade  : POST:RawTrade [userId=12990, currencyFrom=EUR, currencyTo=CZK, amountSell=16366.2104, amountBuy=131.2839, rate=0.7727, timePlaced=2017-07-15 13:35:26, originatingCountry=CA]
+2017-07-15 13:35:27.269  INFO 38041 --- [nio-8102-exec-5] c.magoo.currencyfair.api.model.RawTrade  : POST:RawTrade [userId=67844, currencyFrom=HKD, currencyTo=HKD, amountSell=1211.3233, amountBuy=20860.1019, rate=0.9811, timePlaced=2017-07-15 13:35:27, originatingCountry=CN]
+``` 
+
+
+
